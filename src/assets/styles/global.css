@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root,
+[data-theme="light"],
+[data-theme="system"] {
+  /* Colors - Light Theme (Premium SaaS/Apple Style) */
+  --bg: #f8fafc;
+  --bg-surface: #ffffff;
+  --surface-low: rgba(248, 250, 252, 0.5);
+  --surface: rgba(255, 255, 255, 0.7);
+  --surface-high: rgba(241, 245, 249, 0.8);
+  --glass: rgba(255, 255, 255, 0.45);
+  --border: rgba(148, 163, 184, 0.12);
+  --border-strong: rgba(148, 163, 184, 0.24);
+  --text: #0f172a;
+  --text-mid: #475569;
+  --text-muted: #94a3b8;
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --primary-glow: rgba(37, 99, 235, 0.15);
+  --accent: #f59e0b;
+  --accent-light: #fbbf24;
+  --accent-glow: rgba(245, 158, 11, 0.15);
+  --danger: #ef4444;
+  --secondary: #64748b;
+  
+  /* Modern Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+  /* Compatibility with other CSS */
+  --background: var(--bg);
+
+  /* UI Style */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --border-width: 1px;
+
+  /* Typography - Modern & Readable */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Outfit', sans-serif;
+  --font-display: var(--font-heading);
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+[data-theme="dark"] {
+  /* Colors - Dark Theme */
+  --bg: #070d1a;
+  --bg-surface: #0c1628;
+  --surface: #111d33;
+  --surface-high: #1a2a44;
+  --glass: rgba(17, 29, 51, 0.8);
+  --border: rgba(255, 255, 255, 0.08);
+  --text: #e8effe;
+  --text-mid: rgba(232, 239, 254, 0.6);
+  --text-muted: rgba(232, 239, 254, 0.38);
+  --primary: #3b82f6;
+  --primary-light: #60a5fa;
+  --primary-glow: rgba(59, 130, 246, 0.25);
+  --accent: #fbbf24;
+  --accent-light: #fcd34d;
+  --accent-glow: rgba(251, 191, 36, 0.25);
+  --danger: #f87171;
+  --secondary: rgba(232, 239, 254, 0.56);
+  --shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.24);
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 10px 32px rgba(0, 0, 0, 0.42);
+  --shadow-lg: 0 12px 48px rgba(0, 0, 0, 0.5);
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-theme="system"] {
+    --bg: #070d1a;
+    --bg-surface: #0c1628;
+    --surface: #111d33;
+    --surface-high: #1a2a44;
+    --glass: rgba(17, 29, 51, 0.8);
+    --border: rgba(255, 255, 255, 0.08);
+    --text: #e8effe;
+    --text-mid: rgba(232, 239, 254, 0.6);
+    --text-muted: rgba(232, 239, 254, 0.38);
+    --primary: #3b82f6;
+    --primary-light: #60a5fa;
+    --primary-glow: rgba(59, 130, 246, 0.25);
+    --accent: #fbbf24;
+    --accent-light: #fcd34d;
+    --accent-glow: rgba(251, 191, 36, 0.25);
+    --danger: #f87171;
+    --secondary: rgba(232, 239, 254, 0.56);
+    --shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.24);
+    --shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+    --shadow-md: 0 10px 32px rgba(0, 0, 0, 0.42);
+    --shadow-lg: 0 12px 48px rgba(0, 0, 0, 0.5);
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+html[data-resolved-theme="dark"] {
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  transition: background-color 0.35s cubic-bezier(0.4, 0, 0.2, 1), color 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+.dynamic-theme {
+  transition: background-color 0.35s cubic-bezier(0.4, 0, 0.2, 1), color 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}

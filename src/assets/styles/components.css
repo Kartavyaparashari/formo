@@ -1,0 +1,299 @@
+/* FORM-O v3.1 Unified Component System */
+/* Standardized components used across the planning suite (Pnl, Sec, Spl, SortMaster) */
+
+/* ===== Container & Layout ───── */
+.planning-system-container {
+  padding: 2rem;
+  min-height: 100vh;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.planning-system-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.planning-system-card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+/* ===== Header & Title ───── */
+.planning-system-header {
+  padding: 2.5rem 2.5rem 2rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-surface);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+}
+
+.planning-system-title-group {
+  flex: 1;
+}
+
+.planning-system-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.03em;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.planning-system-subtitle {
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+/* ===== Tabs & Navigation ───── */
+.planning-system-tabs {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-surface);
+  padding: 0 1.5rem;
+}
+
+.tabs-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.tab-button {
+  padding: 1rem 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.tab-button.tab-active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+/* ===== Filters & Search ───── */
+.filters-container {
+    padding: 2rem 2.5rem;
+    background: var(--bg-surface);
+    border-bottom: 1px solid var(--border);
+}
+
+.filters-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.search-section {
+    margin-bottom: 1.5rem;
+}
+
+.search-input-group {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.search-input {
+    flex: 1;
+    background: var(--surface-low);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    color: var(--text);
+}
+
+/* ===== Dashboard Utilities ───── */
+.plan-status-filters {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.stat-badge {
+    height: 28px;
+    padding: 0 10px;
+    background: var(--surface-low);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-mid);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+}
+
+button.stat-badge:hover {
+    background: var(--surface-high);
+    border-color: var(--primary);
+    color: var(--primary);
+    cursor: pointer;
+}
+
+.items-summary {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+}
+
+.meta-item {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.meta-gen {
+    color: var(--status-success);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.nesting-toggle {
+    display: flex;
+    align-items: center;
+    padding-right: 1rem;
+    border-right: 1px solid var(--border);
+}
+
+.nesting-toggle label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--text-mid);
+    cursor: pointer;
+}
+
+.icon-plan { color: var(--primary); opacity: 0.8; }
+.icon-warn { color: var(--accent); }
+
+.action-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    background: var(--surface-low);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-mid);
+    transition: all 0.2s ease;
+}
+
+.action-checkbox.is-active {
+    background: color-mix(in srgb, var(--primary) 10%, transparent);
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+/* ===== Data Tables ───── */
+.items-table-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.items-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    max-height: 600px;
+}
+
+.items-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.items-table-head {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--surface-low);
+}
+
+.header-row th {
+    padding: 1rem;
+    text-align: left;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    border-bottom: 2px solid var(--border);
+    white-space: nowrap;
+}
+
+.table-row {
+    border-bottom: 1px solid var(--border);
+    transition: background 0.1s ease;
+}
+
+.table-row:hover {
+    background: var(--surface-low);
+}
+
+.table-cell {
+    padding: 0.875rem 1rem;
+    font-size: 0.8125rem;
+    color: var(--text);
+    vertical-align: middle;
+}
+
+/* ===== Badges ───── */
+.status-badge {
+    padding: 0.3rem 0.75rem;
+    border-radius: 99px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.status-completed { background: var(--status-success-bg); color: var(--status-success); }
+.status-pending { background: var(--status-warning-bg); color: var(--status-warning); }
+.status-error { background: var(--status-error-bg); color: var(--status-error); }
+
+.type-badge {
+    padding: 0.2rem 0.6rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.65rem;
+    font-weight: 700;
+}
+
+.type-ls { background: #F0FDF4; color: #15803D; }
+.type-ficture { background: #E0F2FE; color: #0369A1; }
+.type-ch { background: #FEF3C7; color: #B45309; }

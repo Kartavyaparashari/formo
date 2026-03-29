@@ -1,0 +1,656 @@
+/* ============================================ */
+/* FORM-O v3.1 Design System – Planning Dashboard */
+/* Premium SaaS Aesthetic | Light Mode | Minimal */
+/* ============================================ */
+
+/* ----- Component Tokens ----- */
+.alpha-card {
+    --card-bg: var(--bg-surface);
+    --card-border: var(--border);
+    --card-shadow: var(--shadow-md);
+    --header-bg: var(--bg-surface);
+}
+
+/* ----- Base Layout ----- */
+.alpha-container {
+    position: relative;
+    min-height: 100vh;
+    padding: 2.5rem 2rem;
+    background: var(--bg);
+}
+
+.alpha-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* ----- Glass Card ----- */
+.alpha-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.alpha-card:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+/* ----- Dashboard Header ----- */
+.alpha-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 2.5rem 2.5rem 2rem;
+    border-bottom: 1px solid var(--border);
+    background: var(--header-bg);
+    gap: 2rem;
+}
+
+.alpha-header-content {
+    flex: 1;
+}
+
+.alpha-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    letter-spacing: -0.03em;
+}
+
+.alpha-header-icon {
+    color: var(--primary);
+    stroke-width: 2.5;
+}
+
+.alpha-subtitle {
+    font-size: 0.9375rem;
+    color: var(--text-mid);
+    margin-top: 0.5rem;
+    font-weight: 450;
+}
+
+.alpha-header-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Type Selectors */
+.alpha-type-selectors {
+    display: flex;
+    padding: 4px;
+    background: var(--surface-low);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+}
+
+.alpha-type-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+.alpha-type-checkbox:hover {
+    background: var(--surface-high);
+}
+
+.alpha-type-checkbox span {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--text-mid);
+}
+
+.alpha-type-checkbox input:checked + span {
+    color: var(--primary);
+}
+
+.alpha-type-checkbox input {
+    accent-color: var(--primary);
+    width: 14px;
+    height: 14px;
+}
+
+/* Buttons */
+.alpha-refresh-btn,
+.alpha-filter-btn {
+    height: 40px;
+    padding: 0 16px;
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.alpha-refresh-btn {
+    background: var(--primary);
+    border: 1px solid var(--primary);
+    color: white;
+}
+
+.alpha-refresh-btn:hover:not(:disabled) {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.alpha-refresh-btn .spin {
+    animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+    to { transform: rotate(360deg); }
+}
+
+.alpha-filter-btn {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-strong);
+    color: var(--text-mid);
+}
+
+.alpha-filter-btn:hover {
+    background: var(--surface-low);
+    border-color: var(--text-muted);
+}
+
+.alpha-filter-btn.is-active {
+    background: var(--surface-high);
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+/* ----- Bulk Operations ----- */
+.alpha-bulk-section {
+    padding: 1.5rem 2.5rem;
+    background: var(--surface-low);
+    border-bottom: 1px solid var(--border);
+}
+
+.alpha-bulk-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.alpha-bulk-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.alpha-bulk-desc {
+    font-size: 0.8125rem;
+    color: var(--text-mid);
+}
+
+.alpha-bulk-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.alpha-nesting-toggle {
+    display: flex;
+    align-items: center;
+    padding-right: 1rem;
+    border-right: 1px solid var(--border);
+}
+
+.alpha-nesting-toggle label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--text-mid);
+    cursor: pointer;
+}
+
+.alpha-generate-all,
+.alpha-download-all,
+.alpha-download-pdf,
+.alpha-print-all {
+    height: 36px;
+    padding: 0 12px;
+    border-radius: var(--radius-md);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.alpha-generate-all {
+    background: var(--primary);
+    border: 1px solid var(--primary);
+    color: white;
+}
+
+.alpha-btn-outline,
+.alpha-download-all,
+.alpha-download-pdf,
+.alpha-print-all {
+    background: white;
+    border: 1px solid var(--border-strong);
+    color: var(--text-mid);
+}
+
+.alpha-btn-outline:hover,
+.alpha-download-all:hover,
+.alpha-download-pdf:hover,
+.alpha-print-all:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: var(--primary-light);
+}
+
+.alpha-bulk-status {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: var(--success-light);
+    border: 1px solid var(--success-border);
+    border-radius: var(--radius-md);
+    color: var(--success);
+    font-size: 0.8125rem;
+    font-weight: 500;
+}
+
+/* ----- Plan Cards ----- */
+.alpha-plans-container {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.alpha-plan-item {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: white;
+    box-shadow: var(--shadow-sm);
+    transition: border-color 0.2s ease;
+}
+
+.alpha-plan-item:hover {
+    border-color: var(--primary);
+}
+
+.alpha-plan-header {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.alpha-plan-title-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.alpha-plan-name {
+    font-size: 1.125rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+}
+
+.alpha-icon-plan { color: var(--primary); opacity: 0.8; }
+.alpha-icon-warn { color: var(--warning); }
+
+.alpha-generated-badge {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.alpha-generated {
+    background: var(--success-light);
+    color: var(--success);
+}
+
+.alpha-not-generated {
+    background: var(--surface-high);
+    color: var(--text-muted);
+}
+
+.alpha-plan-stats {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 1rem;
+}
+
+.alpha-stat-badge {
+    height: 28px;
+    padding: 0 10px;
+    background: var(--surface-low);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    font-size: 0.75rem;
+    font-weight: 550;
+    color: var(--text-mid);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+button.alpha-stat-badge:hover {
+    background: var(--surface-high);
+    border-color: var(--primary);
+    color: var(--primary);
+    cursor: pointer;
+}
+
+.alpha-plan-meta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.alpha-meta-item {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 450;
+}
+
+.alpha-meta-gen {
+    color: var(--success);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.alpha-plan-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.alpha-action-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    background: var(--surface-low);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-mid);
+    transition: all 0.2s ease;
+}
+
+.alpha-action-checkbox:hover {
+    background: var(--surface-high);
+}
+
+.alpha-action-checkbox.is-active {
+    background: var(--primary-light);
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.alpha-nesting-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 6px 10px;
+    background: var(--warning-light);
+    border-radius: var(--radius-md);
+    color: var(--warning);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.alpha-btn-primary {
+    height: 32px;
+    padding: 0 12px;
+    background: var(--primary);
+    border: 1px solid var(--primary);
+    border-radius: var(--radius-md);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 650;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.alpha-btn-primary:hover:not(:disabled) {
+    background: var(--primary-hover);
+}
+
+.alpha-btn-outline {
+    height: 32px;
+    padding: 0 12px;
+    font-size: 0.75rem;
+    font-weight: 650;
+}
+
+/* ----- Data Tables ----- */
+.alpha-plan-details {
+    padding: 0;
+    border-top: 1px solid var(--border);
+}
+
+.alpha-details-header {
+    padding: 1rem 1.5rem;
+    background: var(--surface-low);
+    border-bottom: 1px solid var(--border);
+}
+
+.alpha-details-title {
+    font-size: 0.8125rem;
+    color: var(--text-mid);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.alpha-table-container {
+    max-height: 500px;
+    overflow: auto;
+}
+
+.alpha-data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.alpha-th {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: white;
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    border-bottom: 2px solid var(--border);
+    white-space: nowrap;
+}
+
+.alpha-tr {
+    border-bottom: 1px solid var(--border-light);
+}
+
+.alpha-tr:hover {
+    background: var(--surface-low);
+}
+
+.alpha-td {
+    padding: 12px 16px;
+    font-size: 0.8125rem;
+    color: var(--text);
+    vertical-align: middle;
+}
+
+.alpha-type-tag {
+    font-size: 0.625rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.tag-ficture { background: #E0F2FE; color: #0369A1; }
+.tag-ls { background: #F0FDF4; color: #15803D; }
+.tag-ch { background: #FEF3C7; color: #B45309; }
+
+.alpha-item-name { font-weight: 600; }
+.alpha-drawing { font-size: 0.7rem; color: var(--text-muted); }
+
+.alpha-comp-spec {
+    font-size: 0.75rem;
+    line-height: 1.4;
+    color: var(--text-mid);
+}
+
+.alpha-status-ok, .alpha-status-error {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 600;
+    font-size: 0.75rem;
+}
+
+.alpha-status-ok { color: var(--success); }
+.alpha-status-error { color: var(--danger); }
+
+/* ----- Filters Panel ----- */
+.alpha-filters {
+    padding: 2.5rem;
+    background: white;
+    border-bottom: 1px solid var(--border);
+}
+
+.alpha-filters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.alpha-filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+}
+
+.alpha-filter-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+}
+
+.alpha-filter-multiselect,
+.alpha-filter-select,
+.alpha-filter-input {
+    background: var(--surface-low);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-md);
+    padding: 10px 12px;
+    font-size: 0.875rem;
+    color: var(--text);
+    transition: all 0.2s ease;
+}
+
+.alpha-filter-multiselect:focus,
+.alpha-filter-select:focus,
+.alpha-filter-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    background: white;
+}
+
+.alpha-filter-hint {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.alpha-filter-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-light);
+}
+
+.alpha-apply-filters {
+    height: 40px;
+    padding: 0 20px;
+    background: var(--primary);
+    border: 1px solid var(--primary);
+    border-radius: var(--radius-md);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.alpha-apply-filters:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+}
+
+.alpha-clear-filters {
+    height: 40px;
+    padding: 0 20px;
+    background: white;
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-md);
+    color: var(--text-mid);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.alpha-clear-filters:hover {
+    border-color: var(--danger);
+    color: var(--danger);
+}
+
+.alpha-active-filters {
+    font-size: 0.8125rem;
+    color: var(--text-mid);
+    padding: 8px 16px;
+    background: var(--surface-low);
+    border-radius: var(--radius-full);
+    margin-left: auto;
+}
+
+/* ----- Responsive ----- */
+@media (max-width: 1024px) {
+    .alpha-header { flex-direction: column; align-items: stretch; }
+}
